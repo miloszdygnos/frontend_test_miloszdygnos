@@ -104,9 +104,7 @@ main {
         .popupMenu--active {
             transform: translateY(0%);
             // background-color: red;
-            -webkit-box-shadow: 0px 0px 22px 6px rgba(0, 0, 0, 1);
-            -moz-box-shadow: 0px 0px 22px 6px rgba(0, 0, 0, 1);
-            box-shadow: 0px 0px 22px 6px rgba(0, 0, 0, 1);
+           border: 1px solid black;
             p {
                 position: relative;
                 cursor: pointer;

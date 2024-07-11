@@ -4,6 +4,7 @@ import "./styles/main.scss"
 import "./styles/mobile.scss"
 import ContentBlock from './components/ContentBlock';
 import logo from "./assets/logoHTML.png"
+
 function App() {
 
   const [option, setOption] = useState(null)
@@ -23,7 +24,6 @@ function App() {
       }
       const result  = await response.json();
       const { content } = result;
-      localStorage.setItem("fetchedData", JSON.stringify(content));
       setData(content)
     }
     fetchData();

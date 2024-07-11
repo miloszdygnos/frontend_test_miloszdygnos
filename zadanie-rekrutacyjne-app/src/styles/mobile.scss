@@ -26,9 +26,11 @@
             font-size: 1em;
         }
         .container {
+            
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2,1fr);
             padding-top: 5vh;
+            overflow: hidden;
             .popupMenu {
                 bottom: 0;
                 right: 0;
@@ -92,18 +94,20 @@
         }
     }
     footer {
+        position: relative;
         z-index: 10;
         height: 10vh;
-        padding: 0 8%;
+        padding: 0 5%;
         overflow: hidden;
+        align-content: center;
         grid-template-columns: repeat(2,1fr);
         .footerElement:nth-child(1) {
             background-color: $accentColor;
             z-index: 2;
             .cssBox {
-                width: 70px;
-                height: 70px;
-                font-size: 1em;
+                width: 60px;
+                height: 60px;
+                font-size: 0.8em;
             }
         }
         .footerElement:nth-child(2) {
