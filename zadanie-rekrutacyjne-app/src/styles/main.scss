@@ -76,12 +76,12 @@ main {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding-top: 7vh;
-        min-height: 100%;
+        height: 100%;
         z-index: 0;
         .popupMenu {
             position: absolute;
             right: 0;
-            bottom: 0 - 8vh;
+            bottom: calc(-12vh + 2px);
             width: 270px;
             height: 90px;
             padding: 20px 35px 20px 50px;
@@ -253,6 +253,7 @@ footer {
         width: 100%;
         height: 100%;
         align-content: center;
+        background-color: $accentColor;
         
     }
     .footerElement:nth-child(1) {
@@ -326,7 +327,6 @@ footer {
     .footerElement:nth-child(3) {
         position: relative;
         text-align: end;
-        background-color: $accentColor;
         button {
             width: 270px;
             height: 50px;

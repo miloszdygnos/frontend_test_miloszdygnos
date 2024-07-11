@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import "./styles/main.scss"
+import "./styles/mobile.scss"
 import ContentBlock from './components/ContentBlock';
 import logo from "./assets/logoHTML.png"
 function App() {
@@ -91,11 +92,11 @@ function App() {
         <Link to="/" element={<App/>}><div className='logo'>
             <img src={logo} alt='html5 logo'></img>
           </div></Link>
-        <h1>Zadanie <span>rekrutacyjne</span>{showName ? <h4 style={{
+        <h1>Zadanie <span>rekrutacyjne</span>{showName ? <p style={{
           textAlign:"end",  
           fontWeight: 300
 
-        }}>Miłosz Dygnos</h4> : ""}</h1>
+        }}>Miłosz Dygnos</p> : ""}</h1>
       </header>
       <main>
         <h1>Nagłówek H1</h1>
