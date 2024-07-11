@@ -1,0 +1,8 @@
+DODATKOWO: 
+project is in react
+CSS is awesome in footer 
+alphanetical sorting
+alerts when items are not longer unique
+project is to see on netlify
+local storage features
+used react routing

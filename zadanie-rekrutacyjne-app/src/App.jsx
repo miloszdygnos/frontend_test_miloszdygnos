@@ -23,6 +23,7 @@ function App() {
       }
       const result  = await response.json();
       const { content } = result;
+      localStorage.setItem("fetchedData", JSON.stringify(content));
       setData(content)
     }
     fetchData();
