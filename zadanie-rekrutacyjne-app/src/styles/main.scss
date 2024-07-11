@@ -49,7 +49,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: start;
-    padding:7vh 6.5%;
+    padding:7vh 6.5% 0;
     flex-direction: column;
     background-color: $mainColor;
     position: relative;
@@ -81,7 +81,7 @@ main {
         .popupMenu {
             position: absolute;
             right: 0;
-            bottom: calc(-12vh + 2px);
+            bottom: -8vh;
             width: 270px;
             height: 90px;
             padding: 20px 35px 20px 50px;
