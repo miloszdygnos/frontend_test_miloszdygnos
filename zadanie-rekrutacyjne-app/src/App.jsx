@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import "./styles/main.scss"
 import ContentBlock from './components/ContentBlock';
+import logo from "./assets/logoHTML.png"
 function App() {
 
-  const [option, setOption] = useState("")
+  const [option, setOption] = useState(null)
   const [data, setData] = useState([]);
   const [renderArray, setRenderArray] = useState([]);
-
+  const [active, setActive] = useState(false);
+  const [showName, setShowName] = useState(false);
   const handleChange = (e) => {
     setOption(e.target.value);
   }
@@ -85,8 +88,14 @@ function App() {
   return (
     <>
       <header>
-        <div className='logo'></div>
-        <h1>Zadanie <span>rekrutacyjne</span></h1>
+        <Link to="/" element={<App/>}><div className='logo'>
+            <img src={logo} alt='html5 logo'></img>
+          </div></Link>
+        <h1>Zadanie <span>rekrutacyjne</span>{showName ? <h4 style={{
+          textAlign:"end",  
+          fontWeight: 300
+
+        }}>Miłosz Dygnos</h4> : ""}</h1>
       </header>
       <main>
         <h1>Nagłówek H1</h1>
@@ -94,17 +103,17 @@ function App() {
           <section>
             <h3>blok pierwszy</h3>
             <div>
-              <input type="radio" name="choice" id='first' value="first" label="true" onChange={handleChange}/>
+              <input type="radio" name="choice" id='first' value="first" label="true" checked={option === 'first'} onChange={handleChange}/>
               <label htmlFor="first">Opcja pierwsza</label>
             </div>
             <div>
-              <input type="radio" name="choice" id='second' value="second" label="true"  onChange={handleChange}/>
+              <input type="radio" name="choice" id='second' value="second" label="true" checked={option === 'second'}  onChange={handleChange}/>
 
               <label htmlFor="second">Opcja druga</label>
             </div>
             
             <div>
-              <input type="radio" name="choice" id='third' value="third" label="true" onChange={handleChange}/>
+              <input type="radio" name="choice" id='third' value="third" label="true" checked={option === 'third'} onChange={handleChange}/>
 
               <label htmlFor="third">Opcja losowa</label>
             </div>
@@ -126,7 +135,15 @@ function App() {
                 <ContentBlock key={index} content={element.value}/>
               )
             })}
+            
           </section>
+          <div className={active ? "popupMenu popupMenu--active" : "popupMenu"}>
+            <p onClick={() => {
+              setRenderArray([])
+              setOption(null)
+            }}>zresetuj ustawienia</p>
+            <p onClick={() => setShowName(prev => !prev)}>pokaz dane osobowe</p>
+          </div>
         </div>
 
       </main>
@@ -141,8 +158,8 @@ function App() {
        <div className='footerElement'>
         <h3>nabthat</h3>
        </div> 
-        <div  className='footerElement'>
-          <button><span>pokaż</span></button>
+        <div  className='footerElement '>
+          <button onClick={() => setActive(prev => !prev)}><span>pokaż</span>  </button>
         </div>
       </footer>
     </>
