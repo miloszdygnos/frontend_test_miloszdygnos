@@ -5,3 +5,6 @@ alphanetical sorting
 alerts when items are not longer unique
 project is up to see on netlify
 used react routing
+
+
+https://nabthatmiloszdygnos.netlify.app
