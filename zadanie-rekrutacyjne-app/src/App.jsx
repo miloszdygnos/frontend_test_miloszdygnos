@@ -139,15 +139,9 @@ function App() {
             })}
             
           </section>
-          <div className={active ? "popupMenu popupMenu--active" : "popupMenu"}>
-            <p onClick={() => {
-              setRenderArray([])
-              setOption(null)
-            }}>zresetuj ustawienia</p>
-            <p onClick={() => setShowName(prev => !prev)}>pokaz dane osobowe</p>
-          </div>
+          
         </div>
-
+       
       </main>
       <footer>
         <div className='footerElement'>
@@ -163,6 +157,16 @@ function App() {
         <div  className='footerElement '>
           <button onClick={() => setActive(prev => !prev)}><span>pokaż</span>  </button>
         </div>
+       
+          <div className={active ? "popupMenu popupMenu--active" : "popupMenu"}>
+              <p onClick={() => {
+                setRenderArray([])
+                setOption(null)
+              }}>zresetuj ustawienia</p>
+              <p onClick={() => setShowName(prev => !prev)}>pokaz dane osobowe</p>
+            </div>
+ 
+        
       </footer>
     </>
   )
